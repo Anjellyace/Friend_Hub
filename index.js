@@ -7,6 +7,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
 
+// Firebase configuration                                                                                                                              
+const firebaseConfig = {
+    databaseURL: "https://friend-hub-60b27-default-rtdb.asia-southeast1.firebasedatabase.app/", // <-- change this to yours
+};
+
 let isAuthenticated = false;
 
 function checkPassword (req, res, next) {
