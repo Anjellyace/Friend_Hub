@@ -31,7 +31,7 @@ app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
-    res.render('registration.ejs');
+    res.render('login.ejs');
 });
 
 app.post('/signup', (req, res) => {
