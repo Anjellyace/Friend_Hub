@@ -14,6 +14,7 @@ const firebaseConfig = {
 
 let isAuthenticated = false;
 
+
 function checkPassword (req, res, next) {
     console.log(req.body.password);
     if (req.body.password === 'pleasework') {
@@ -22,20 +23,24 @@ function checkPassword (req, res, next) {
         isAuthenticated = false;
     }
     next ();
-
 }
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
-    res.render('index.ejs');
+    res.render('registration.ejs');
 });
 
-app.post('/submit', [checkPassword], (req, res) => {
+app.post('/signup', (req, res) => {
+    res.render('signup.ejs');
+});
+
+app.post('/home', [checkPassword], (req, res) => {
     const data = { name: req.body.password };
-    res.render('submitted.ejs');
+    res.render('home.ejs');
 });
 
 app.listen(port, (req, res) => {

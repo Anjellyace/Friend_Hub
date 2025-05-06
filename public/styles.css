@@ -340,14 +340,14 @@ label {
     color: #555;
 }
 
-.signup form {
+.login form {
     background-color: white;
     padding: 30px 40px;
     border-radius: 10px;
 }
 
 /* Boxes where you type shit */
-.signup [type="text"], input[type="password"] {
+.login [type="text"], input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -357,7 +357,7 @@ label {
 }
 
 /*button*/
-.signup input[type="submit"] {
+.login input[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: lightblue;
@@ -369,6 +369,13 @@ label {
     transition: background-color 0.3s ease;
 }
 /*fancy hover color magic*/
-.signup input[type="submit"]:hover {
+.login input[type="submit"]:hover {
     background-color: rgb(98, 138, 151);
 }
+
+.toggle-link input[type="submit"] {
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 10px;
+  }
