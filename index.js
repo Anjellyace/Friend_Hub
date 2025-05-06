@@ -47,3 +47,7 @@ app.listen(port, (req, res) => {
     console.log(`Server is running on port ${port}`);
 
 })
+
+app.get('/profile', (req, res) => {
+    res.render('profile.ejs'); // Renders profile.ejs
+});

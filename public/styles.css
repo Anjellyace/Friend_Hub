@@ -191,6 +191,7 @@ nav{
     height: 55px;
     width: 55px;
     margin-right: 10px;
+    margin-left: 20px;
     padding-top: 15px;
     text-align: center;
     position: relative;
@@ -221,7 +222,7 @@ nav{
 
 .right-sidebar .sidebar-ads {
     width: 50%;
-    margin-top: 230px;
+    margin-top: 80px;
     margin-left: -5px;
     border-radius: 4px 0;
     position: relative;
@@ -235,13 +236,14 @@ nav{
 }
 
 .sidebar-ads img{
-   height: 37%;
+   height: 20%;
    margin-top: 3%;
    border-radius: 10%;  
-   margin-right: 10%;
+   margin-right: 5%;
+   margin-left:5%;
 }
 
-.sidebar-ads2 {
+/* .sidebar-ads2 { 
     width: 50%;
     margin-top: 430px;
     margin-left: -290px;
@@ -251,7 +253,7 @@ nav{
 
 .sidebar-ads2 a{
     margin-left: 90px;
-}
+} */
 
 .story-gallery{
     display: flex;
@@ -285,20 +287,20 @@ nav{
 }
 
 .story1{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(images/profile-pic.jpg);
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/profile-pic.jpg);
 }
 .story2{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(images/status2.jpg);
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status2.jpg);
     
 }
 .story3{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(images/status3.jpg);
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status3.jpg);
 }
 .story4{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(images/status4.jpg);
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status4.jpg);
 }
 .story5{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(images/status5.jpg);
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status5.jpg);
 }
 
 .story.story1 img{
