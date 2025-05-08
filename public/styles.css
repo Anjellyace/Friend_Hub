@@ -381,3 +381,153 @@ label {
     text-decoration: underline;
     margin-top: 10px;
   }
+
+ /* Profile Page CSS New update ate AC */
+
+  .nav-leftprofile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background: rgb(2, 2, 70); */
+    padding: 5px, 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .profilelogo{
+    /* background: rgb(2, 2, 70); */
+    width: 150px;
+    height: 80px;
+    border-radius: 6px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.nav-rightprofile{
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+}
+
+.nav-rightprofile ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+.nav-rightprofile ul li img{
+    width: 35px;
+    margin: 0 15px;
+}
+
+ 
+.profilesearch-box{
+    background:#efefef;
+    width: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.profilesearch-box img{
+    width: 18px;
+}
+
+.profilesearch-box input {
+    width: 10%;
+    background: transparent;
+    padding: 1pc;
+    outline: none;
+    border: 0;
+} 
+
+/* Profile Page Main  */
+
+.profile__main{
+    margin-top: 10px;
+    width:100%;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    font-family: 'poppins', sans-serif;  
+}
+
+.profile-about li {
+   list-style-type: none; 
+   margin: 0;
+   padding: 0;
+   display: flex;
+   align-items: center;
+}
+
+a{ 
+    text-decoration: none;
+}
+.img__container img{
+    border-radius: 100%;
+    display: flex;
+}
+.navprofile-right{
+    display: flex;
+    background: lightgrey; 
+    list-style: none; 
+}
+
+ .header__wrapper{ 
+    width: 100%; 
+    background: url(assets/backgroundfteam.png) no-repeat 50% 20% / cover;
+    min-height: calc(100px  15vw); 
+}  
+.profile-content ul{
+    margin-right: auto;
+}
+
+.prodile-about{
+    display: inline-block;
+    flex-direction: row;
+    align-content: normal;
+}
+/* .cols__container{ 
+    padding: 25px 20px;
+    text-align: center;
+    /* max-width: 350px; 
+    position: relative;
+    margin: 0 auto; 
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+} */
+
+/* .cols__container .left__col { 
+width: 120px;
+height: 120px;
+object-fit: cover;
+border-radius: 50%;
+display: block;
+box-shadow: 1px 3px 12px rgba(0,0,0,0 0.18);
+} */
+
+.img_container{ 
+    position: absolute;
+    background: #2afa6a;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    bottom: 3px;
+    right: 11px;
+    border: 2px solid #fff
+}
+.profilepage-photos img{
+    /* position: absolute; */
+    width: 200px; 
+    height: 200px; 
+    border-radius: 5%;
+    top: 50px;
+    left: 50px;
+    /* border: 3px solid #1876f2; */
+
+}
+
