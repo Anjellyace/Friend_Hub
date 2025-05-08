@@ -3,14 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="styles.css"><script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
-
+    <script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
-        <div class="nav-left">
-            <img src="assets/friendhublogo.png" class="logo">
-    
+  <nav>
+    <div class="nav-leftprofile">
+      <img src="assets/Flogo.png" alt="Logo" class="profilelogo" />
+      <div class="profilesearch-box">
+        <img src="assets/search.png" alt="Search Icon" />
+        <input type="text" placeholder="Search..." />
+      </div>
+    </div>
+    <div class="nav-rightprofile">
+      <ul>
+        <li><img src="assets/iconhome.png" alt="Home" /></li>
+        <li><img src="assets/video.png" alt="Videos" /></li>
+        <li><img src="assets/inbox.png" alt="Messages" /></li>
+        <li><img src="assets/notification.png" alt="Notifications" /></li> 
+      </ul>
+    </div>
+  </nav>
+  <main class="profile__main">
+    <div class="header__wrapper">
+      <header></header>
+      <div class="cols__container">
+        <div class="left__col">
+          <div class="img__container">
+            <img src="assets/profilepic2.avif" alt="Angela Smith" />
+            <span></span>
+          </div>
+          <h2>Angela Smith</h2>
+          <p>UI/UX Designer</p>
+          <p>angelasmith@example.com</p>
+
+          <ul class="profile-about">
+            <li><span>5081</span>Followers</li>
+            <li><span>1208</span>Following</li>
+            <li><span>300, 588</span>Attractions</li>
+          </ul>
+         
+          </div>
+          <div class="profile-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam cum neque animi sequi, at nobis asperiores illum eaque labore deserunt! Quas architecto doloribus enim dolorem autem, molestiae delectus maxime reprehenderit?
+            </p>
+
+            <ul>
+              <li><i class="fab fa-twitter"></i></li>
+              <li><i class="fab fa-pinterest"></i></li>
+              <li><i class="fab fa-facebook"></i></li>
+              <li><i class="fab fa-dribble"></i></li>
+              </ul>
+          </div>
+          <div class="right__col">
+            <nav class="navprofile-right">
+              <ul>
+                <li><a href="#">Friends</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Groups</a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+              <button>Follow</button>
+            </nav>
+            <div class="profilepage-photos">
+              <img src="assets/img1.png" alt="Photo" />
+              <img src="assets/img2.jpg" alt="Photo" />
+              <img src="assets/img3.avif" alt="Photo" />
+              <img src="assets/img4.jpg" alt="Photo" />
+              <img src="assets/img5.webp" alt="Photo" />
+              <img src="assets/img6.jpg" alt="Photo" />
+              <img src="assets/img7.jpg" alt="Photo" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </main>
+  
 </body>
 </html>
