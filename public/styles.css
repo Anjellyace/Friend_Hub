@@ -8,7 +8,7 @@
 body{
     background: #efefef;
 }
-
+/* Start of Home Page Navbar CSS */
 nav{
     display: flex;
     align-items: center;
@@ -17,6 +17,7 @@ nav{
     padding: 5px, 5%;
     position: sticky;
     top: 0;
+    height: 100px;
     z-index: 100;
 }
 
@@ -91,7 +92,9 @@ nav{
     top: 0;
     right: 0;
 }
+/* End of Homepage Navbar CSS */
 
+/* Global */
 .container{
     display: flex;
     justify-content: space-between;
@@ -119,7 +122,7 @@ nav{
 .main-content{
     flex-basis: 47%;
 }
-
+/*Left Sidebar CSS */
 .imp-links a, .shortcut-links a {
     text-decoration: none;
     display: flex;
@@ -154,7 +157,9 @@ nav{
     color: #626262;
     font-weight: 500;
 }
+/*End of Left Sidebar CSS */
 
+/* Right Sidebar CSS */
 .sidebar-title{
     display: flex;
     align-items: center;
@@ -220,7 +225,7 @@ nav{
     padding: 4px 0;
 }
 
-.right-sidebar .sidebar-ads {
+.right-sidebar .sidebar-ads{
     width: 50%;
     margin-top: 80px;
     margin-left: -5px;
@@ -236,12 +241,13 @@ nav{
 }
 
 .sidebar-ads img{
-   height: 20%;
+   height: 15%;
    margin-top: 3%;
    border-radius: 10%;  
    margin-right: 5%;
    margin-left:5%;
 }
+/* End of Right Sidebar CSS */
 
 /* .sidebar-ads2 { 
     width: 50%;
@@ -255,6 +261,7 @@ nav{
     margin-left: 90px;
 } */
 
+/* Main Content Story */
 .story-gallery{
     display: flex;
     justify-content: space-between;
@@ -318,6 +325,7 @@ nav{
     padding: 20px;
     columns: #626262;
 }
+/*  */
 .user-profile{
     display: flex;
     align-items: center;
@@ -382,13 +390,13 @@ label {
     margin-top: 10px;
   }
 
- /* Profile Page CSS New update ate AC */
+  /* Start of Profile Page CSS */
+  /* Profile page Navbar */
 
   .nav-leftprofile{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background: rgb(2, 2, 70); */
     padding: 5px, 5%;
     position: sticky;
     top: 0;
@@ -396,12 +404,20 @@ label {
   }
 
   .profilelogo{
-    /* background: rgb(2, 2, 70); */
-    width: 150px;
-    height: 80px;
-    border-radius: 6px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
     margin-right: 40px;
     margin-left: 40px;
+}
+.profilelogo1{
+    width: 50px;
+    height: 50px;
+    margin-left: -35px;
+}
+.profilelogo2{
+    width: 50px;
+    height: 50px;
 }
 
 .nav-rightprofile{
@@ -420,10 +436,9 @@ label {
     margin: 0 15px;
 }
 
- 
 .profilesearch-box{
     background:#efefef;
-    width: 350px;
+    width: 450px;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -435,13 +450,13 @@ label {
 }
 
 .profilesearch-box input {
-    width: 10%;
+    width: 50%;
     background: transparent;
     padding: 1pc;
     outline: none;
     border: 0;
 } 
-
+/* End of Profile Navbar CSS */
 /* Profile Page Main  */
 
 .profile__main{
@@ -455,79 +470,136 @@ label {
 
 .profile-about li {
    list-style-type: none; 
-   margin: 0;
+    margin-left: -10px;
    padding: 0;
    display: flex;
    align-items: center;
 }
 
-a{ 
+.profile__main *a{ 
     text-decoration: none;
 }
 .img__container img{
+    width: 250px;
+    height: 250px;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    margin-left: 50px;
     border-radius: 100%;
-    display: flex;
+    display: flex;    
+}
+
+.img__container{
+background-color: aliceblue;
+
 }
 .navprofile-right{
     display: flex;
-    background: lightgrey; 
+    background: peachpuff; 
     list-style: none; 
 }
 
  .header__wrapper{ 
     width: 100%; 
-    background: url(assets/backgroundfteam.png) no-repeat 50% 20% / cover;
-    min-height: calc(100px  15vw); 
+    min-height: calc(100px  5vw); 
+
 }  
-.profile-content ul{
-    margin-right: auto;
-}
-
-.prodile-about{
-    display: inline-block;
-    flex-direction: row;
-    align-content: normal;
-}
-/* .cols__container{ 
-    padding: 25px 20px;
-    text-align: center;
-    /* max-width: 350px; 
-    position: relative;
+.profile-cover-container1{
+    background-size: contain;
+    background-position: top center;
+    width: 100%; 
+    height: 100vh;
     margin: 0 auto; 
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
+    padding: 20px; 
+    background-color: #f0f0f0;
+    background: url(assets/backgroundfteam.png) no-repeat 30% 20% / cover;
+} 
 
-} */
-
-/* .cols__container .left__col { 
-width: 120px;
-height: 120px;
-object-fit: cover;
-border-radius: 50%;
-display: block;
-box-shadow: 1px 3px 12px rgba(0,0,0,0 0.18);
-} */
-
-.img_container{ 
-    position: absolute;
-    background: #2afa6a;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    bottom: 3px;
-    right: 11px;
-    border: 2px solid #fff
+.cols__container{
+    padding: 20px 20px;
+    overflow: hidden;
 }
-.profilepage-photos img{
-    /* position: absolute; */
-    width: 200px; 
-    height: 200px; 
-    border-radius: 5%;
-    top: 50px;
-    left: 50px;
-    /* border: 3px solid #1876f2; */
 
+.about-container{
+    align-items: center;
+    margin-left: 350px;
+    margin-bottom: 20px;
+    border: 1px solid white
 }
+.about-container h2 {
+margin-left: 5px;
+margin-top:-200px;
+font-size: 60px;
+}
+.profile-content p{
+    display: flex;
+    gap: 10px;
+    margin-top: -60px;
+    margin-left: 350px;
+}
+
+.profile-content ul{
+    display: flex;
+    margin-left: 350px;
+    margin-right: auto;
+    padding: 5px;
+}
+
+.profile-about{
+    display: flex;
+    gap: 10px; 
+    padding: 10px;
+    margin-left: 1px;
+}
+.profile-about img{
+    width: 40px;
+    height: 40px;
+    margin-left: 1px;
+}
+.navprofile-right ul{
+    display: flex;
+    gap: 200px;
+    margin-left: 300px;
+    color:black;
+    font-size: x-large;
+    font-weight: bolder;
+    align-items: center;
+}
+.navprofile-right .rating-tab{
+    display: flex;
+    gap: 10px;
+    height: 50px;
+    width: -30px;
+    margin-right: 50px;
+}
+
+.scroll-container {
+    width: 100%; 
+    height: 200vh;
+    border: 2px solid #ccc; 
+    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+    padding: 20px;
+}
+
+.scroll-container img {
+    width: 500px;
+    height: 300px;
+    border-radius: 10%;
+    display: -moz-grid-group; 
+    margin-right: 10px; 
+    background: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+/* End of Profile Page Main CSS */
+
+
+
+
+
+
+
+
 
