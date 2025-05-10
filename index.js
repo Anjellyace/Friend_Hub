@@ -43,11 +43,12 @@ app.post('/home', [checkPassword], (req, res) => {
     res.render('home.ejs');
 });
 
+app.get('/profile', (req, res) => {
+    res.render('profile.ejs'); // Renders profile.ejs
+});
+
 app.listen(port, (req, res) => {
     console.log(`Server is running on port ${port}`);
 
 })
 
-app.get('/profile', (req, res) => {
-    res.render('profile.ejs'); // Renders profile.ejs
-});
