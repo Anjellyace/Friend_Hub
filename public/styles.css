@@ -1,605 +1,114 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins', sans-serif;
-    box-sizing: border-box;
-}
-
-body{
-    background: #efefef;
-}
-/* Start of Home Page Navbar CSS */
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: lightblue;
-    padding: 5px, 5%;
-    position: sticky;
-    top: 0;
-    height: 100px;
-    z-index: 100;
-}
-
-.logo{
-    width: 160px;
-    height: 40px;
-    margin-right: 40px;
-    margin-left: 40px;
-}
-
-.nav-left, .nav-right{
-    display: flex;
-    align-items: center; 
-}
-
-.nav-left ul li{
-    list-style: none;
-    display: inline-block;
-}
-
-.nav-left ul li img{
-    width: 28px;
-    margin: 0 15px;
-}
-
-.nav-user-icon img{
-    width: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-right: 5px;
-    padding-top: 10px;
-}
-
-.nav-user-icon{
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-.search-box{
-    background:#efefef;
-    width: 350px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-}
-
-.search-box img{
-    width: 18px;
-}
-
-.search-box input {
-    width: 10%;
-    background: transparent;
-    padding: 1pc;
-    outline: none;
-    border: 0;
-}
-
-.online{
-    position: relative;
-}
-
-.online::after {
-    content: '';
-    width: 7px;
-    height: 7px;
-    border: 2px solid #fff;
-    border-radius: 50;
-    background-color: #41db51;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-/* End of Homepage Navbar CSS */
-
-/* Global */
-.container{
-    display: flex;
-    justify-content: space-between;
-    padding:13px 5%;
-}
-
-.left-sidebar{
-    flex-basis: 25%;
-    position: sticky;
-    top: 70px;
-    align-self: flex-start;
-}
-
-.right-sidebar{
-    flex-basis: 25%;
-    position: sticky;
-    top: 70px;
-    align-self: flex-start;
-    background: #fff;
-    padding: 20px;
-    border-radius: 4px;
-    color:#626262;
-}
-
-.main-content{
-    flex-basis: 47%;
-}
-/*Left Sidebar CSS */
-.imp-links a, .shortcut-links a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    color: #626262;
-    width: fit-content;
-}
-
-.imp-links a img{
-    width: 25px;
-    margin-right: 15px;
-}
-
-.imp-links a:last-child{
-    color: #1876f2;
-
-}
-
-.imp-links{
-    border-bottom: 1px solid #ccc;
-}
-
-.shortcut-links a img{
-    width: 40px;
-    border-radius: 4px;
-    margin-right: 15px;
-}
-
-.shortcut-links p{
-    margin: 25px 0;
-    color: #626262;
-    font-weight: 500;
-}
-/*End of Left Sidebar CSS */
-
-/* Right Sidebar CSS */
-.sidebar-title{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 10px;
-}
-
-.sidebar-title h4{
-   font-weight: 600;
-   font-size: 18px;
-}
-
-.sidebar-title a{
-    text-decoration: none;
-    color: #1876f2;
-    font-size: 12px;  
-}
-
-.right-sidebar {
-    padding-right: 3%;
-    padding-left: 0%;
-    height: 100vh;
-}
-
-.event{
-    display: flex;
-    font-size: 14px;
-    margin-bottom: 15px;
-    margin-right: 10px;
-}
-
-.left-event{
-    border-radius: 10px;
-    height: 55px;
-    width: 55px;
-    margin-right: 10px;
-    margin-left: 20px;
-    padding-top: 15px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.event p{
-    font-size: 10px;
-}
-
-.event a{
-    font-size: 12px;
-    text-decoration: none;
-    color: #1876f2;
-}
-
-.left-event span{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #1876f2;
-    color: #fff;
-    font-size: 10px;
-    padding: 4px 0;
-}
-
-.right-sidebar .sidebar-ads{
-    width: 50%;
-    margin-top: 80px;
-    margin-left: -5px;
-    border-radius: 4px 0;
-    position: relative;
-    left: 50px;
-}
-
-.sidebar-ads a{
-    margin-top: 7px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.sidebar-ads img{
-   height: 15%;
-   margin-top: 3%;
-   border-radius: 10%;  
-   margin-right: 5%;
-   margin-left:5%;
-}
-/* End of Right Sidebar CSS */
-
-/* .sidebar-ads2 { 
-    width: 50%;
-    margin-top: 430px;
-    margin-left: -290px;
-    border-radius: 4px 0;
-    position: relative;
-}
-
-.sidebar-ads2 a{
-    margin-left: 90px;
-} */
-
-/* Main Content Story */
-.story-gallery{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.story{
-    flex-basis: 18%;
-    padding-top: 32%;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    border-radius: 10px;
-}
-.story img{ 
-    position: absolute;
-    width: 30px;
-    border-radius: 50%;
-    top: 7px;
-    left: 7px;
-    border: 3px solid #1876f2;
-}
-.story p{
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-size: 14px;
-}
-
-.story1{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/profile-pic.jpg);
-}
-.story2{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status2.jpg);
-    
-}
-.story3{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status3.jpg);
-}
-.story4{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status4.jpg);
-}
-.story5{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status5.jpg);
-}
-
-.story.story1 img{
-    top: unset;
-    left: 50%;
-    bottom: 40px;
-    transform: translateX(-50%);
-    border: 0;
-    width: 35px;
-}
-.write-post-container{
-    width: 100%;
-    background: #fff;
-    border-radius: 6px;
-    padding: 20px;
-    columns: #626262;
-}
-/*  */
-.user-profile{
-    display: flex;
-    align-items: center;
-}
-.user-profile img{
-    width: 45px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-/*The Results of Angie's Suffering*/
-h1 {
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-/*The Label*/
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-.login form {
-    background-color: white;
-    padding: 30px 40px;
-    border-radius: 10px;
-}
-
-/* Boxes where you type shit */
-.login [type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-/*button*/
-.login input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: lightblue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-/*fancy hover color magic*/
-.login input[type="submit"]:hover {
-    background-color: rgb(98, 138, 151);
-}
-
-.toggle-link input[type="submit"] {
-    color: #007BFF;
-    cursor: pointer;
-    text-decoration: underline;
-    margin-top: 10px;
-  }
-
-  /* Start of Profile Page CSS */
-  /* Profile page Navbar */
-
-  .nav-leftprofile{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px, 5%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .profilelogo{
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    margin-right: 40px;
-    margin-left: 40px;
-}
-.profilelogo1{
-    width: 50px;
-    height: 50px;
-    margin-left: -35px;
-}
-.profilelogo2{
-    width: 50px;
-    height: 50px;
-}
-
-.nav-rightprofile{
-    display: flex;
-    margin-left: 30px;
-    align-items: center;
-}
-
-.nav-rightprofile ul li{
-    list-style: none;
-    display: inline-block;
-}
-
-.nav-rightprofile ul li img{
-    width: 35px;
-    margin: 0 15px;
-}
-
-.profilesearch-box{
-    background:#efefef;
-    width: 450px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-}
-
-.profilesearch-box img{
-    width: 18px;
-}
-
-.profilesearch-box input {
-    width: 50%;
-    background: transparent;
-    padding: 1pc;
-    outline: none;
-    border: 0;
-} 
-/* End of Profile Navbar CSS */
-/* Profile Page Main  */
-
-.profile__main{
-    margin-top: 10px;
-    width:100%;
-    padding: 0;
-    box-sizing: border-box;
-    min-height: 100vh;
-    font-family: 'poppins', sans-serif;  
-}
-
-.profile-about li {
-   list-style-type: none; 
-    margin-left: -10px;
-   padding: 0;
-   display: flex;
-   align-items: center;
-}
-
-.profile__main *a{ 
-    text-decoration: none;
-}
-.img__container img{
-    width: 250px;
-    height: 250px;
-    margin-top: -10px;
-    margin-bottom: 5px;
-    margin-left: 50px;
-    border-radius: 100%;
-    display: flex;    
-}
-
-.img__container{
-background-color: aliceblue;
-
-}
-.navprofile-right{
-    display: flex;
-    background: peachpuff; 
-    list-style: none; 
-}
-
- .header__wrapper{ 
-    width: 100%; 
-    min-height: calc(100px  5vw); 
-
-}  
-.profile-cover-container1{
-    background-size: contain;
-    background-position: top center;
-    width: 100%; 
-    height: 100vh;
-    margin: 0 auto; 
-    padding: 20px; 
-    background-color: #f0f0f0;
-    background: url(assets/backgroundfteam.png) no-repeat 30% 20% / cover;
-} 
-
-.cols__container{
-    padding: 20px 20px;
-    overflow: hidden;
-}
-
-.about-container{
-    align-items: center;
-    margin-left: 350px;
-    margin-bottom: 20px;
-    border: 1px solid white
-}
-.about-container h2 {
-margin-left: 5px;
-margin-top:-200px;
-font-size: 60px;
-}
-.profile-content p{
-    display: flex;
-    gap: 10px;
-    margin-top: -60px;
-    margin-left: 350px;
-}
-
-.profile-content ul{
-    display: flex;
-    margin-left: 350px;
-    margin-right: auto;
-    padding: 5px;
-}
-
-.profile-about{
-    display: flex;
-    gap: 10px; 
-    padding: 10px;
-    margin-left: 1px;
-}
-.profile-about img{
-    width: 40px;
-    height: 40px;
-    margin-left: 1px;
-}
-.navprofile-right ul{
-    display: flex;
-    gap: 200px;
-    margin-left: 300px;
-    color:black;
-    font-size: x-large;
-    font-weight: bolder;
-    align-items: center;
-}
-.navprofile-right .rating-tab{
-    display: flex;
-    gap: 10px;
-    height: 50px;
-    width: -30px;
-    margin-right: 50px;
-}
-
-.scroll-container {
-    width: 100%; 
-    height: 200vh;
-    border: 2px solid #ccc; 
-    padding: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 20px; 
-    padding: 20px;
-}
-
-.scroll-container img {
-    width: 500px;
-    height: 300px;
-    border-radius: 10%;
-    display: -moz-grid-group; 
-    margin-right: 10px; 
-    background: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-}
-/* End of Profile Page Main CSS */
-
-
-
-
-
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles.css"><script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
+
+  </head>
+<body>
+  <nav>
+    <div class="nav-leftprofile">
+      <img src="assets/Flogo.png" alt="Logo" class="profilelogo" />
+      <img src="assets/linkedin.png" alt="Logo" class="profilelogo1" />
+      <img src="assets/github.png" alt="Logo" class="profilelogo2" />
+      <div class="profilesearch-box">
+        <img src="assets/search.png" alt="Search Icon" />
+        <input type="text" placeholder="Search..." />
+      </div>
+    </div>
+    <div class="nav-rightprofile">
+      <ul>
+        <li><img src="assets/iconhome.png" alt="Home" /></li>
+        <li><img src="assets/video.png" alt="Videos" /></li>
+        <li><img src="assets/inbox.png" alt="Messages" /></li>
+        <li><img src="assets/notification.png" alt="Notifications" /></li> 
+        <li><img src="assets/Settings.png" alt="Settings" /></li> 
+        <li><img src="assets/logout.png" alt="Logout" /></li> 
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Profile Page Main Content -->
+  <main class="profile__main">
+    <div class="header__wrapper">
+      <header></header>
+      <div class="profile-cover-container1">
+        <h1>Welcome</h1>
+        <img src="assets/backgroundfteam.png">
+      </div>
+      <div class="cols__container">
+        <div class="left__col">
+          <div class="img__container">
+            <img src="assets/profilepic2.avif" alt="Angela Smith" />
+            <span></span>
+            <div class="about-container">
+            <h2>Angela Smith</h2>
+          <p>UI/UX Designer</p>
+          <p>angelasmith@example.com</p>
+          <ul class="profile-about">
+            <li>
+              <img src="assets/followers.png">
+              <span>5081</span>Followers</li><br>
+              <img src="assets/following.png">
+            <li><span>1208</span>Following</li><br>
+          </ul>
+          </div>
+          </div>
+          <div class="profile-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam cum neque animi sequi, at nobis asperiores illum eaque labore deserunt! Quas architecto doloribus enim dolorem autem, molestiae delectus maxime reprehenderit?
+            </p>
+            <!-- <ul>
+              <li><i class="fab fa-twitter"></i></li>
+              <li><i class="fab fa-pinterest"></i></li>
+              <li><i class="fab fa-facebook"></i></li>
+              <li><i class="fab fa-dribble"></i></li>
+              </ul> -->
+          </div>
+          </div>
+          
+
+          <div class="right__col">
+            <nav class="navprofile-right">
+              <ul>
+                <li><a href="#">Friends</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Groups</a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+              <!-- <button>Follow</button> -->
+              <div class="rating-tab">
+                <img src="assets/follow.png"/>
+                <img src="assets/feedback.png"/>
+                <img src="assets/help.png"/>
+              </div>
+            </nav>
+            <div class="scroll-container">
+              <img src="assets/img1.png" alt="Photo" />
+              <img src="assets/img2.jpg" alt="Photo" />
+              <img src="assets/img3.avif" alt="Photo" />
+              <img src="assets/img4.jpg" alt="Photo" />
+              <img src="assets/img5.webp" alt="Photo" />
+              <img src="assets/img6.jpg" alt="Photo" />
+              <img src="assets/img7.jpg" alt="Photo" />
+              <img src="assets/img8.jpg" alt="Photo" />
+              <img src="assets/img9.jpg" alt="Photo" />
+              <img src="assets/img10.jpg" alt="Photo" />
+              <img src="assets/img11.jpg" alt="Photo" />
+              <img src="assets/img12.jpg" alt="Photo" />
+              <img src="assets/img13.jpg" alt="Photo" />
+              <img src="assets/img14.jpg" alt="Photo" />
+              <img src="assets/img15.jpg" alt="Photo" />
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    </main>
+  
+</body>
+</html>
