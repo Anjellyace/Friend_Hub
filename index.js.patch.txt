@@ -1,0 +1,70 @@
+--- index.js (original)
++++ index.js (updated with Firebase post CRUD)
+
+1a2,7
+> import { initializeApp } from "firebase/app";
+> import { getDatabase, ref, push, set, update, remove, onValue } from "firebase/database";
+> 
+> // Initialize Firebase
+> const firebaseApp = initializeApp(firebaseConfig);
+> const database = getDatabase(firebaseApp);
+> 
+9a16
+> app.use(express.json());
+10a18
+> app.set('view engine', 'ejs');
+> 
+> // API to get all posts
+> app.get('/posts', (req, res) => {
+>     const postsRef = ref(database, 'posts');
+>     onValue(postsRef, (snapshot) => {
+>         const data = snapshot.val();
+>         res.json(data || {});
+>     }, {
+>         onlyOnce: true
+>     });
+> });
+> 
+> // API to create a new post
+> app.post('/posts', (req, res) => {
+>     if (!isAuthenticated) {
+>         return res.status(401).send('Unauthorized');
+>     }
+>     const postsRef = ref(database, 'posts');
+>     const newPostRef = push(postsRef);
+>     const postData = {
+>         content: req.body.content,
+>         timestamp: Date.now()
+>     };
+>     set(newPostRef, postData)
+>         .then(() => res.status(201).json({ id: newPostRef.key, ...postData }))
+>         .catch((error) => res.status(500).json({ error: error.message }));
+> });
+> 
+> // API to update a post
+> app.put('/posts/:id', (req, res) => {
+>     if (!isAuthenticated) {
+>         return res.status(401).send('Unauthorized');
+>     }
+>     const postId = req.params.id;
+>     const postRef = ref(database, `posts/${postId}`);
+>     const updatedData = {
+>         content: req.body.content,
+>         timestamp: Date.now()
+>     };
+>     update(postRef, updatedData)
+>         .then(() => res.json({ id: postId, ...updatedData }))
+>         .catch((error) => res.status(500).json({ error: error.message }));
+> });
+> 
+> // API to delete a post
+> app.delete('/posts/:id', (req, res) => {
+>     if (!isAuthenticated) {
+>         return res.status(401).send('Unauthorized');
+>     }
+>     const postId = req.params.id;
+>     const postRef = ref(database, `posts/${postId}`);
+>     remove(postRef)
+>         .then(() => res.json({ id: postId }))
+>         .catch((error) => res.status(500).json({ error: error.message }));
+> });

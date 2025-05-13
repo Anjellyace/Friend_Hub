@@ -1,123 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>FriendHub</title>
-    <link rel="stylesheet" href="styles.css"><script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/post-styles.css" />
+    <script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
+    <script>
+        window.currentUser = "John Nicholson";
+        window.currentUserPicture = "images/profile-pic.jpg";
+    </script>
+    <script src="/post-script.js" defer></script>
 </head>
 <body>
-
     <nav>
         <div class="nav-left">
-            <img src="images/friendhublogos.png" class="logo">
+            <img src="images/friendhublogos.png" class="logo" />
             <ul>
-                <li><img src="images/notification.png"></li>
-                <li><img src="images/inbox.png"></li>
-                <li><img src="images/video.png"></li>
+                <li><img src="images/notification.png" /></li>
+                <li><img src="images/inbox.png" /></li>
+                <li><img src="images/video.png" /></li>
             </ul>
         </div>
         <div class="nav-right">
-            
             <div class="search-box">
-                <img src="images/search.png">
-                <input type="text" placeholder="search">
+                <img src="images/search.png" />
+                <input type="text" placeholder="search" />
             </div>
             <div class="nav-user-icon online">
-                <img src="images/profile-pic.jpg">
-
+                <img src="images/profile-pic.jpg" />
             </div>
-
         </div>
     </nav>
-    
+
     <div class="container">
         <!---- left sidebar-------->
         <div class="left-sidebar">
             <div class="imp-links">
-                <a href="#"><img src="images/news.png"> Latest News</a>
-                <a href="#"><img src="images/friends.png"> Friends</a>
-                <a href="#"><img src="images/group.png"> Group</a>
-                <a href="#"><img src="images/marketplace.png"> Marketplace</a>
-                <a href="#"><img src="images/watch.png"> Watch</a>
+                <a href="#"><img src="images/news.png" /> Latest News</a>
+                <a href="#"><img src="images/friends.png" /> Friends</a>
+                <a href="#"><img src="images/group.png" /> Group</a>
+                <a href="#"><img src="images/marketplace.png" /> Marketplace</a>
+                <a href="#"><img src="images/watch.png" /> Watch</a>
                 <a href="#">See More</a>
             </div>
             <div class="shortcut-links">
                 <p>Your Shortcuts</p>
-                <a href="#"><img src="images/shortcut-1.jpg"> Web Developers</a>
-                <a href="#"><img src="images/shortcut-2.jpg"> Web Design Course</a>
-                <a href="#"><img src="images/shortcut-3.jpg"> Full Stack Development</a>
-                <a href="#"><img src="images/shortcut-4.jpg"> Website Experts</a>
+                <a href="#"><img src="images/shortcut-1.jpg" /> Web Developers</a>
+                <a href="#"><img src="images/shortcut-2.jpg" /> Web Design Course</a>
+                <a href="#"><img src="images/shortcut-3.jpg" /> Full Stack Development</a>
+                <a href="#"><img src="images/shortcut-4.jpg" /> Website Experts</a>
             </div>
         </div>
-        
+
         <!-----main-content-------->
         <div class="main-content">
-            
             <div class="story-gallery">
                 <div class="story story1">
-                    <img src="images/upload.png">
+                    <img src="images/upload.png" />
                     <p>Post Story</p>
                 </div>
                 <div class="story story2">
-                    <img src="images/member2.jpg">
+                    <img src="images/member2.jpg" />
                     <p>Angel</p>
                 </div>
                 <div class="story story3">
-                    <img src="images/member3.jpg">
+                    <img src="images/member3.jpg" />
                     <p>Jam</p>
                 </div>
                 <div class="story story4">
-                    <img src="images/member4.jpg">
+                    <img src="images/member4.jpg" />
                     <p>Marvin</p>
                 </div>
                 <div class="story story5">
-                    <img src="images/member5.jpg">
+                    <img src="images/member5.jpg" />
                     <p>Aiza</p>
                 </div>
             </div>
             <div class="write-post-container">
                 <div class="user-profile">
-                    <img src="images/profile-pic.jpg">
+                    <img src="images/profile-pic.jpg" />
                     <div>
                         <p>John Nicholson</p>
                         <small>Public</small>
                     </div>
                 </div>
+                <form id="postForm" enctype="multipart/form-data">
+                    <textarea id="postContent" placeholder="What's on your mind?" required></textarea>
+                    <button type="submit">Post</button>
+                </form>
+                <div id="postsContainer"></div>
             </div>
-
-            <!-- <div class="story-gallery">
-                
-            </div>
-            <div class="story-gallery">
-                
-            </div>
-            <div class="story-gallery">
-                
-            </div>
-            <div class="story-gallery">
-                
-            </div> -->
         </div>
-        
+
         <!-----right-sidebar-------->
         <div class="right-sidebar">
-
             <div class="sidebar-title">
                 <h4>Events</h4>
                 <a href="#">See All</a>
             </div>
 
             <div class="event">
-            <div class="left-event">
-                <h3>18</h3>
-                <span>March</span>
-            </div>
-            <div class="right-event"></div>
-                <h4>Social Media <p>BGC Technohub</p>
-                <a href="#">More Info</a>
-            </h4>
+                <div class="left-event">
+                    <h3>18</h3>
+                    <span>March</span>
+                </div>
+                <div class="right-event"></div>
+                <h4>
+                    Social Media <p>BGC Technohub</p>
+                    <a href="#">More Info</a>
+                </h4>
             </div>
 
             <div class="event">
@@ -126,39 +119,39 @@
                     <span>September</span>
                 </div>
                 <div class="right-event"></div>
-                    <h4>Mobile Marketing
+                <h4>
+                    Mobile Marketing
                     <p>BGC Technohub</p>
                     <a href="#">More Info</a>
                 </h4>
+            </div>
+            <div class="sidebar-ads">
+                <h4>Advertisement <a href="#">Close</a></h4>
+                <img src="images/advertisement.jpg" />
+            </div>
+            <div class="sidebar-ads2">
+                <h4>Conversation <a href="#">Hide Chat</a></h4>
+            </div>
+
+            <div class="online-list">
+                <div class="online">
+                    <img src="images/member2.jpg" />
                 </div>
-                <div class="sidebar-ads">
-                    <h4>Advertisement <a href="#">Close</a></h4>
-                    <img src="images/advertisement.jpg">
+                <p>Angel Pre</p>
+            </div>
+            <div class="online-list">
+                <div class="online">
+                    <img src="images/member3.jpg" />
                 </div>
-                <div class="sidebar-ads2">
-                    <h4>Conversation <a href="#">Hide Chat</a></h4>    
+                <p>Aiza Cruz</p>
+            </div>
+            <div class="online-list">
+                <div class="online">
+                    <img src="images/member4.jpg" />
                 </div>
-    
-                <div class="online-list">
-                    <div class="online">
-                        <img src="images/member2.jpg">
-                    </div>
-                    <p>Angel Pre</p>    
-                </div>
-                <div class="online-list">
-                    <div class="online">
-                        <img src="images/member3.jpg">
-                    </div>
-                    <p>Aiza Cruz</p>    
-                </div>
-                <div class="online-list">
-                    <div class="online">
-                        <img src="images/member4.jpg">
-                    </div>
-                    <p>christian Santos</p>    
-                </div>
-            </div> 
+                <p>christian Santos</p>
+            </div>
+        </div>
     </div>
-    
 </body>
 </html>

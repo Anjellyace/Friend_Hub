@@ -1,0 +1,251 @@
+.post-user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.post-user {
+    font-weight: 600;
+    font-size: 14px;
+    color: #1877f2;
+    margin: 0;
+}
+
+.post-content {
+    margin-top: 0;
+    font-size: 15px;
+    color: #333;
+    white-space: pre-wrap;
+}
+
+.post-content-container {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background-color: #f5f6f7;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+    white-space: pre-wrap;
+}
+
+.post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#postForm {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#postForm button[type="submit"] {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#postForm button[type="submit"]:hover {
+    background-color: #145dbf;
+}
+
+.edit-btn {
+    background-color: transparent;
+    border: 1px solid #1877f2;
+    color: #1877f2;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: 1px solid #e63946;
+    color: #e63946;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #1877f2;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #e63946;
+    border-color: #e63946;
+    color: white;
+}
+
+/* Added styles for comment input bar inside posts */
+.comment-input-bar {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 100%; /* Ensure it takes full width */
+}
+
+.comment-input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    font-size: 15px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+    width: 100%; /* Set the width to 100% to take full width */
+    min-width: 600px; /* Set a minimum width if desired */
+}
+
+.comment-input:focus {
+    outline: none;
+    border-color: #145dbf;
+    box-shadow: 0 0 4px rgba(20, 93, 191, 0.5);
+}
+
+.comment-submit-btn {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-submit-btn:hover {
+    background-color: #145dbf;
+}
+
+/* Added styles for post text bar textarea */
+#postContent {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#postContent:focus {
+    outline: none;
+    border-color: #1877f2;
+    box-shadow: 0 0 5px rgba(24, 119, 242, 0.5);
+}
+
+/* Optional: add margin below textarea */
+#postForm textarea {
+    margin-bottom: 12px;
+}
+
+/* Edit and Delete buttons for comments */
+.comment-edit-btn, .comment-delete-btn {
+    background-color: transparent;
+    border: 1px solid #1877f2; /* Blue border for edit */
+    color: #1877f2; /* Blue text for edit */
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Edit button hover effect */
+.comment-edit-btn:hover {
+    background-color: #1877f2;
+    color: white;
+}
+
+/* Delete button hover effect */
+.comment-delete-btn {
+    background-color: transparent;
+    border: 1px solid #e63946; /* Red border for delete */
+    color: #e63946; /* Red text for delete */
+}
+
+.comment-delete-btn:hover {
+    background-color: #e63946;
+    border-color: #e63946;
+    color: white;
+}
+
+/* Styling for the Edit Form (comment & post edit) */
+.edit-textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    margin-bottom: 12px; /* Space between textarea and buttons */
+}
+
+.edit-textarea:focus {
+    outline: none;
+    border-color: #1877f2;
+    box-shadow: 0 0 5px rgba(24, 119, 242, 0.5);
+}
+
+.save-btn, .cancel-btn {
+    background-color: transparent;
+    border: 1px solid #1877f2; /* Blue border for save */
+    color: #1877f2; /* Blue text for save */
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.save-btn:hover {
+    background-color: #1877f2;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    border: 1px solid #e63946; /* Red border for cancel */
+    color: #e63946; /* Red text for cancel */
+}
+
+.cancel-btn:hover {
+    background-color: #e63946;
+    border-color: #e63946;
+    color: white;
+}
