@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #efefef;
+}
+
+/* Login & Signup Page Start */
+/*The Results of Angie's Suffering*/
+.login-signup-pagebg {
+    background: linear-gradient(to bottom, #1ad6f7, #ffffff); /* purple to blue */
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.login-signup-pagebg .login-image img, .signup-image img {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+/*The Label*/
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+form {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+}
+
+/* Boxes where you type shit */
+[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/*button*/
+.login-submit input[type="submit"], .signup-submit input[type="submit"]  {
+    width: 100%;
+    padding: 10px;
+    background-color: lightblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+/*fancy hover color magic*/
+.login-submit input[type="submit"]:hover, .signup-submit input[type="submit"]:hover  {
+    background-color: rgb(98, 138, 151);
+}
+
+.toggle-link input[type="submit"] {
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 10px;
+    border: none;
+  }
+/* Login & Signup Page END */

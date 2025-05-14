@@ -19,16 +19,6 @@ import { getDatabase, ref, push, set, update, remove, onValue } from "firebase/d
 
 let isAuthenticated = true; // Temporarily set to true for testing API
 
-function checkPassword(req, res, next) {
-    console.log(req.body.password);
-    if (req.body.password === 'pleasework') {
-        isAuthenticated = true;
-    } else {
-        isAuthenticated = false;
-    }
-    next();
-}
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -61,15 +51,19 @@ app.get('/', (req, res) => {
     res.render('login.ejs');
 });
 
-app.post('/signup', (req, res) => {
+app.get('/signup', (req, res) => {
     res.render('signup.ejs');
 });
 
-app.post('/home', [checkPassword], (req, res) => {
+app.get('/home', (req, res) => {
     if (!isAuthenticated) {
         return res.status(401).send('Unauthorized');
     }
     res.render('home.ejs');
+});
+
+app.get('/profile', (req, res) => {
+    res.render('profile.ejs'); // Renders profile.ejs
 });
 
 // Initialize Firebase

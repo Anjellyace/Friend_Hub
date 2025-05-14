@@ -4,24 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css"><script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="login-signup.css"><script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1> Welcome to FriendHub! </h1>
-    <div class="login">
-        <form action="/home" method="POST">
-            <label for="name">User Name: </label>
-            <input type="text" name="name" id="name">
-            
-            <label for="password">Password: </label>
-            <input type="password" name="password" required>
-            <input type="submit" value="Log-In">            
-        </form>
+    <div class="login-signup-pagebg"> 
+        <div class="login-image">
+            <img src="assets/friendhub-login-white-text.png">
+        </div>
+        <div class="login">
+            <!-- input fields -->
+            <form id="loginForm">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email">
+                
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password" required>
+                <div class="login-submit">
+                    <input type="submit" value="Log-In">  
+                </div>          
+            </form>
+        </div>
+        <!-- Directs you to signup page -->
+        <div class="toggle-link">
+            <a href="/signup" class="signup-button-link">Don’t have an account? Sign up</a>
+        </div>
     </div>
-    <div class="toggle-link">
-        <form action="/signup" method="POST"> 
-            <input type="submit" value="Don’t have an account? Sign up"></form>
-    </div>
-
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script src="/auth.js"></script>
 </body>
 </html>
