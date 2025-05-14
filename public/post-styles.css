@@ -249,3 +249,36 @@
     border-color: #e63946;
     color: white;
 }
+
+/* Reaction button styles */
+.reaction-container {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reaction-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.reaction-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.reaction-btn.reacted {
+    background-color: #1877f2;
+    color: white;
+}
+
+.reaction-count {
+    font-size: 0.9em;
+    color: #555;
+    margin-left: 8px;
+}

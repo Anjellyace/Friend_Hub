@@ -31,6 +31,13 @@ function checkPassword(req, res, next) {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Global request logger middleware
+app.use((req, res, next) => {
+    console.log(`Incoming request: ${req.method} ${req.path}`);
+    next();
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve uploaded files statically
@@ -204,6 +211,52 @@ app.delete('/posts/:postId/comments/:commentId', (req, res) => {
     const commentRef = ref(database, `comments/${postId}/${commentId}`);
     remove(commentRef)
         .then(() => res.json({ id: commentId }))
+        .catch((error) => res.status(500).json({ error: error.message }));
+});
+
+// API to get reactions for a post
+app.get('/posts/:id/reactions', (req, res) => {
+    const postId = req.params.id;
+    const reactionsRef = ref(database, `reactions/${postId}`);
+    onValue(reactionsRef, (snapshot) => {
+        const data = snapshot.val();
+        res.json(data || {});
+    }, {
+        onlyOnce: true
+    });
+});
+
+app.post('/posts/:id/reactions', (req, res) => {
+    const postId = req.params.id;
+    console.log('POST /posts/:id/reactions body:', req.body);
+    console.log('isAuthenticated:', isAuthenticated);
+    if (!isAuthenticated) {
+        return res.status(401).send('Unauthorized');
+    }
+    const user = req.body.user;
+    const reaction = req.body.reaction;
+    if (!user || !reaction) {
+        return res.status(400).json({ error: 'User and reaction are required' });
+    }
+    const reactionRef = ref(database, `reactions/${postId}/${user}`);
+    set(reactionRef, reaction)
+        .then(() => res.status(201).json({ user, reaction }))
+        .catch((error) => res.status(500).json({ error: error.message }));
+});
+
+// API to remove a reaction for a post
+app.delete('/posts/:id/reactions', (req, res) => {
+    const postId = req.params.id;
+    if (!isAuthenticated) {
+        return res.status(401).send('Unauthorized');
+    }
+    const user = req.body.user;
+    if (!user) {
+        return res.status(400).json({ error: 'User is required' });
+    }
+    const reactionRef = ref(database, `reactions/${postId}/${user}`);
+    remove(reactionRef)
+        .then(() => res.json({ user }))
         .catch((error) => res.status(500).json({ error: error.message }));
 });
 
