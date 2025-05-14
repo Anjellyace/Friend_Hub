@@ -45,9 +45,8 @@
             <img src="assets/profilepic2.avif" alt="Angela Smith" />
             <span></span>
             <div class="about-container">
-            <h2>Angela Smith</h2>
-          <p>UI/UX Designer</p>
-          <p>angelasmith@example.com</p>
+            <h2><strong> <span id="profile-username">Loading...</span> </strong></h2>
+            <p><strong>Joined:</strong> <span id="profile-joined">Loading...</span></p>          <p><strong> <span id="profile-email">Loading...</span> </strong></p>
           <ul class="profile-about">
             <li>
               <img src="assets/followers.png">
@@ -109,6 +108,9 @@
       
     </div>
     </main>
-  
+      <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+      <script src="/auth.js"></script>
 </body>
 </html>

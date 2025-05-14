@@ -28,29 +28,33 @@ const firebaseConfig = {
       auth.onAuthStateChanged((user) => {
         if (user) {
           const userRef = db.collection("users").doc(user.uid);
-          userRef.get().then((doc) => {
-            if (doc.exists) {
-              const data = doc.data();
-              document.getElementById("profile-username").textContent = data.username || "N/A";
-              document.getElementById("profile-email").textContent = data.email || "N/A";
+          userRef.get()
+            .then((doc) => {
+              if (doc.exists) {
+                const data = doc.data();
+                console.log("Loaded user data:", data); // ✅ log for debug
+                document.getElementById("profile-username").textContent = data.username || "N/A";
+                document.getElementById("profile-email").textContent = data.email || "N/A";
 
-              const date = data.createdAt?.toDate();
-              document.getElementById("profile-joined").textContent = date
-                ? date.toLocaleDateString()
-                : "Unknown";
-            } else {
-              alert("User profile not found.");
-            }
-          }).catch((err) => {
-            console.error("Error fetching profile:", err);
-            alert("Error loading profile.");
-          });
+                const date = data.createdAt?.toDate();
+                document.getElementById("profile-joined").textContent = date
+                  ? date.toLocaleDateString()
+                  : "Unknown";
+              } else {
+                alert("User profile not found.");
+              }
+            })
+            .catch((err) => {
+              console.error("❌ Error fetching profile:", err); // ✅ show full error
+              alert("Error loading profile.");
+            });
         } else {
           alert("Please log in to view your profile.");
           window.location.href = "/";
         }
       });
     }
+
       
     // 🔑 Login handler
     const loginForm = document.getElementById("loginForm");

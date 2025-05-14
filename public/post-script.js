@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const postContent = document.getElementById('postContent');
     const postsContainer = document.getElementById('postsContainer');
 
-    const currentUser = window.currentUser || 'Anonymous';
+    const currentUser = window.currentUser || 'profile-username';
     const currentUserPicture = window.currentUserPicture || '/default-user.png';
 
     // Function to fetch and render posts
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                     const commentUserName = document.createElement('p');
                                     // Prevent duplicate names in comments
-                                    commentUserName.textContent = (comment.user === post.user) ? '' : (comment.user || 'Anonymous');
+                                    commentUserName.textContent = (comment.user === post.user) ? '' : (comment.user || 'profile-username');
                                     commentUserName.className = 'comment-user';
 
                                     commentUserInfo.appendChild(commentUserImg);
