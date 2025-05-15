@@ -7,7 +7,26 @@
     <link rel="stylesheet" href="styles.css"><script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
 
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const logoutImage = document.getElementById("logoutImage");
+    if (logoutImage) {
+      logoutImage.addEventListener("click", function () {
+        firebase.auth().signOut()
+          .then(() => {
+            console.log("Signed out");
+            window.location.href = "/";
+          })
+          .catch((error) => {
+            console.error("Logout failed:", error);
+          });
+      });
+    }
+  });
+</script>
+
   </head>
+  
 <body>
   <nav>
     <div class="nav-leftprofile">
@@ -26,7 +45,7 @@
         <li><img src="assets/inbox.png" alt="Messages" /></li>
         <li><img src="assets/notification.png" alt="Notifications" /></li> 
         <li><img src="assets/Settings.png" alt="Settings" /></li> 
-        <li><img src="assets/logout.png" alt="Logout" /></li> 
+        <li><img src="assets/logout.png" id="logoutImage" alt="Logout" style="cursor:pointer" /></li> 
       </ul>
     </div>
   </nav>

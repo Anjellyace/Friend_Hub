@@ -14,7 +14,7 @@ const firebaseConfig = {
   
   document.addEventListener("DOMContentLoaded", () => {
     // 🔐 Protect /home and /profile
-    const protectedRoutes = ["/home", "/profile"];
+    const protectedRoutes = ["/home"];
     if (protectedRoutes.includes(window.location.pathname)) {
       firebase.auth().onAuthStateChanged((user) => {
         if (!user) {
@@ -23,6 +23,8 @@ const firebaseConfig = {
         }
       });
     }
+
+    
         // 👤 Load profile data
     if (window.location.pathname === "/profile") {
       auth.onAuthStateChanged((user) => {
