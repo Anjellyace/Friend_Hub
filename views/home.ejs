@@ -13,6 +13,7 @@
     </script>
     <script src="/post-script.js" defer></script>
 </head>
+
 <body>
     <nav>
         <div class="nav-left">
@@ -21,12 +22,15 @@
                 <li><img src="assets/notification.png" /></li>
                 <li><img src="assets/inbox.png" /></li>
                 <li><img src="assets/video.png" /></li>
+                <li><img src="assets/logout.png" id="logoutImage" alt="Logout" style="cursor:pointer" /></li> 
             </ul>
         </div>
         <div class="nav-right">
             <div class="search-box">
                 <img src="assets/search.png" />
                 <input type="text" placeholder="search" />
+
+
             </div>
             <a href="/profile">
                 <div class="nav-user-icon online">
@@ -171,6 +175,32 @@
     window.currentUser = username;
   });
 </script>
+        <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="/auth.js"></script>
+
+    <script>
+    </script>
+
+    <!-- Logout Script -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const logoutImage = document.getElementById("logoutImage");
+        if (logoutImage) {
+        logoutImage.addEventListener("click", function () {
+            firebase.auth().signOut()
+            .then(() => {
+                alert("Signed out from home");
+                window.location.href = "/";
+            })
+            .catch((error) => {
+                console.error("Logout failed:", error);
+            });
+        });
+        }
+    });
+    </script>
 
 </body>
 </html>
