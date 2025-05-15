@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "firebase": "^11.7.3",
     "nodemon": "^3.1.10"
   },
   "name": "friendhubtest",

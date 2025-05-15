@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FriendHub</title>
-    <link rel="stylesheet" href="styles.css"><script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
-    
-
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -26,10 +26,13 @@
                 <input type="text" placeholder="search">
             </div>
             <a href="/profile">
-            <div class="nav-user-icon online">
-                <img src="assets/profile-pic.jpg">
+                <div class="nav-user-icon online">
+                    <img src="<%= user.profilePic || 'assets/usericon.png' %>" alt="<%= user.username %>">
+                </div>
             </a>
-            </div>
+            <a href="/logout" class="logout-btn" title="Logout">
+                <img src="assets/logout.png" alt="Logout">
+            </a>
 
         </div>
     </nav>
@@ -81,12 +84,86 @@
             </div>
             <div class="write-post-container">
                 <div class="user-profile">
-                    <img src="assets/profile-pic.jpg">
+                    <img src="<%= user.profilePic || 'assets/usericon.png' %>" alt="<%= user.username %>">
                     <div>
-                        <p>John Nicholson</p>
-                        <small>Public</small>
+                        <p><%= user ? user.username : 'Guest User' %></p>
+                        <small>Email: <%= user ? user.email : 'Not available' %></small>
                     </div>
                 </div>
+                <div class="post-input-container">
+                    <form action="/create-post" method="POST" enctype="multipart/form-data">
+                        <textarea rows="3" placeholder="What's on your mind?" name="content"></textarea>
+                        <div class="add-post-links">
+                            <label for="post-image" class="file-upload">
+                                <img src="assets/photo.png" alt="Upload Image">
+                                Photo/Video
+                            </label>
+                            <input type="file" id="post-image" name="image" accept="image/*" style="display: none;">
+                            <button type="submit" class="create-post-button">Create Post</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Posts Display Area -->
+            <div class="posts-container">
+                <% if (typeof posts !== 'undefined' && posts.length > 0) { %>
+                    <% posts.forEach(post => { %>
+                        <div class="post" data-post-id="<%= post._id %>">
+                            <div class="post-header">
+                                <div class="post-user">
+                                    <img src="assets/usericon.png" alt="User">
+                                    <div>
+                                        <h3><%= post.username %></h3>
+                                        <span class="post-time"><%= post.createdAt %></span>
+                                    </div>
+                                </div>
+                                <% if (user && user.username === post.username) { %>
+                                    <div class="post-actions">
+                                        <button class="edit-post" onclick="editPost('<%= post._id %>')">
+                                            <img src="assets/edit.png" alt="Edit">
+                                        </button>
+                                        <button class="delete-post" onclick="deletePost('<%= post._id %>')">
+                                            <img src="assets/delete.png" alt="Delete">
+                                        </button>
+                                    </div>
+                                <% } %>
+                            </div>
+                            <div class="post-content">
+                                <p class="post-text"><%= post.content %></p>
+                                <% if (post.image) { %>
+                                    <img src="<%= post.image %>" alt="Post Image" class="post-image">
+                                <% } %>
+                            </div>
+                            <div class="post-footer">
+                                <div class="like-comment">
+                                    <button class="like-btn" onclick="likePost('<%= post._id %>')">
+                                        <img src="assets/like.png" alt="Like">
+                                        <span><%= post.likes %> Likes</span>
+                                    </button>
+                                    <button class="comment-btn" onclick="toggleComments('<%= post._id %>')">
+                                        <img src="assets/comment.png" alt="Comment">
+                                        <span><%= post.comments.length %> Comments</span>
+                                    </button>
+                                </div>
+                                <div class="comments-section" id="comments-<%= post._id %>" style="display: none;">
+                                    <div class="comments-list">
+                                        <% post.comments.forEach(comment => { %>
+                                            <div class="comment">
+                                                <strong><%= comment.username %>:</strong>
+                                                <span><%= comment.content %></span>
+                                            </div>
+                                        <% }) %>
+                                    </div>
+                                    <form class="comment-form" onsubmit="addComment(event, '<%= post._id %>')">
+                                        <input type="text" placeholder="Write a comment..." name="comment">
+                                        <button type="submit">Send</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } %>
             </div>
 
           <!--  <div class="story-gallery">

@@ -3,27 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css"><script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
+    <title>FriendHub - Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <!-- <div class="signup"> -->
-        <form action="/home" method="POST">
-            <label for="signup-name">Username:</label>
-            <input type="text" name="name" id="signup-name" required>
+    <div class="login-container">
+        <h1>Create Your Account</h1>
+        <div class="logo-container">
+            <img src="assets/friendhublogoimage.png" alt="FriendHub Logo" class="login-logo">
+        </div>
+        <% if (typeof error !== 'undefined') { %>
+            <div class="error-message">
+                <%= error %>
+            </div>
+        <% } %>
+        <div class="login">
+            <form action="/signup" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
 
-            <label for="signup-email">Email:</label>
-            <input type="email" name="email" id="signup-email" required>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
 
-            <label for="signup-password">Password:</label>
-            <input type="password" name="password" id="signup-password" required>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
 
-            <label for="confirm-password">Confirm Password:</label>
-            <input type="password" name="confirm_password" id="confirm-password" required>
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
 
-            <input type="submit" value="Sign Up">
-        </form>
-    <!-- </div> -->
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+        <div class="toggle-link">
+            <p>Already have an account? <a href="/">Log in</a></p>
+        </div>
+    </div>
 </body>
 </html>

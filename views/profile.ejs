@@ -21,12 +21,12 @@
     </div>
     <div class="nav-rightprofile">
       <ul>
-        <li><img src="assets/iconhome.png" alt="Home" /></li>
+        <li><a href="/home"><img src="assets/iconhome.png" alt="Home" /></a></li>
         <li><img src="assets/video.png" alt="Videos" /></li>
         <li><img src="assets/inbox.png" alt="Messages" /></li>
         <li><img src="assets/notification.png" alt="Notifications" /></li> 
         <li><img src="assets/Settings.png" alt="Settings" /></li> 
-        <li><img src="assets/logout.png" alt="Logout" /></li> 
+        <li><a href="/logout" title="Logout"><img src="assets/logout.png" alt="Logout" /></a></li> 
       </ul>
     </div>
   </nav>
@@ -36,37 +36,31 @@
     <div class="header__wrapper">
       <header></header>
       <div class="profile-cover-container1">
-        <h1>Welcome</h1>
+        <h1>Welcome <%= user ? user.username : 'Guest' %></h1>
          <img src="assets/backgroundfteam.png">
       </div>
       <div class="cols__container">
         <div class="left__col">
           <div class="img__container">
-            <img src="assets/profilepic2.avif" alt="Angela Smith" />
+            <img src="<%= user.profilePic || 'assets/usericon.png' %>" alt="<%= user ? user.username : 'Profile Picture' %>" id="profile-image" />
             <span></span>
             <div class="about-container">
-            <h2>Angela Smith</h2>
-          <p>UI/UX Designer</p>
-          <p>angelasmith@example.com</p>
-          <ul class="profile-about">
-            <li>
-              <img src="assets/followers.png">
-              <span>5081</span>Followers</li><br>
-              <img src="assets/following.png">
-            <li><span>1208</span>Following</li><br>
-          </ul>
-          </div>
+            <h2><%= user ? user.username : 'Guest User' %></h2>
+            <p>Email: <%= user ? user.email : 'Not available' %></p>
+            <ul class="profile-about">
+              <li>
+                <img src="assets/followers.png">
+                <span>5081</span>Followers</li><br>
+                <img src="assets/following.png">
+              <li><span>1208</span>Following</li><br>
+            </ul>
+            </div>
           </div>
           <div class="profile-content">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam cum neque animi sequi, at nobis asperiores illum eaque labore deserunt! Quas architecto doloribus enim dolorem autem, molestiae delectus maxime reprehenderit?
             </p>
-           <!-- <ul>
-              <li><i class="fab fa-twitter"></i></li>
-              <li><i class="fab fa-pinterest"></i></li>
-              <li><i class="fab fa-facebook"></i></li>
-              <li><i class="fab fa-dribble"></i></li>
-              </ul> -->
+          
           </div>
           </div>
           
