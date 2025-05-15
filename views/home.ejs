@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/post-styles.css" />
     <script src="https://kit.fontawesome.com/8becd3a18f.js" crossorigin="anonymous"></script>
     <script>
-        window.currentUser = "John Nicholson";
+        window.currentUser || 'username';
         window.currentUserPicture = "images/profile-pic.jpg";
     </script>
     <script src="/post-script.js" defer></script>
@@ -83,7 +83,8 @@
                 <div class="user-profile">
                     <img src="assets/profile-pic.jpg" />
                     <div>
-                        <p>John Nicholson</p>
+                        <p><span id="home-username">Guest</span></h2>
+</p>
                         <small>Public</small>
                     </div>
                 </div>
@@ -154,5 +155,22 @@
             </div>
         </div>
     </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Pull from localStorage
+    const username = localStorage.getItem("username") || "Guest";
+
+    // Update UI
+    const nameEl = document.getElementById("home-username");
+    if (nameEl) {
+      nameEl.textContent = username;
+    }
+
+    // Update global JS vars for use in other scripts
+    window.currentUser = username;
+  });
+</script>
+
 </body>
 </html>

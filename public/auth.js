@@ -40,6 +40,11 @@ const firebaseConfig = {
                 document.getElementById("profile-joined").textContent = date
                   ? date.toLocaleDateString()
                   : "Unknown";
+
+                if (data.username) {
+                  localStorage.setItem("username", data.username);
+            }
+
               } else {
                 alert("User profile not found.");
               }
@@ -63,15 +68,25 @@ const firebaseConfig = {
         e.preventDefault();
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-  
+
         auth.signInWithEmailAndPassword(email, password)
-          .then(() => {
-            window.location.href = "/home";
+          .then((cred) => {
+            const uid = cred.user.uid;
+            return db.collection("users").doc(uid).get();
+          })
+          .then((doc) => {
+            if (doc.exists) {
+              const username = doc.data().username;
+              if (username) {
+                localStorage.setItem("username", username); // ✅ Store it
+              }
+            }
+            window.location.href = "/home"; // ✅ Go to home after storing
           })
           .catch((err) => alert("Login failed: " + err.message));
       });
     }
-  
+
     // ✍️ Signup handler
     const signupForm = document.getElementById("signupForm");
     if (signupForm) {
