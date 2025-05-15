@@ -289,20 +289,20 @@ nav{
 }
 
 .story1{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/profile-pic.jpg);
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/sirram.jpg);
 }
 .story2{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status2.jpg);
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/Jamstory.jpg);
     
 }
 .story3{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status3.jpg);
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/Mavi.jpg);
 }
 .story4{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status4.jpg);
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/acstory.jpg);
 }
 .story5{
-    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/status5.jpg);
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.5)), url(assets/angiestory.jpg);
 }
 
 .story.story1 img{

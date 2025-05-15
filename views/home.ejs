@@ -27,7 +27,7 @@
             </div>
             <a href="/profile">
                 <div class="nav-user-icon online">
-                    <img src="<%= user.profilePic || 'assets/usericon.png' %>" alt="<%= user.username %>">
+                    <img src="<%= (user && user.profilePic) || '/assets/usericon.png' %>" alt="<%= (user && user.username) || 'User' %>">
                 </div>
             </a>
             <a href="/logout" class="logout-btn" title="Logout">
@@ -66,28 +66,28 @@
                     <p>Post Story</p>
                 </div>
                 <div class="story story2">
-                    <img src="assets/member2.jpg">
-                    <p>Angel</p>
-                </div>
-                <div class="story story3">
-                    <img src="assets/member3.jpg">
+                    <img src="assets/Jam.png">
                     <p>Jam</p>
                 </div>
-                <div class="story story4">
-                    <img src="assets/member4.jpg">
+                <div class="story story3">
+                    <img src="assets/Marvin.png">
                     <p>Marvin</p>
                 </div>
+                <div class="story story4">
+                    <img src="assets/AC.png">
+                    <p>AC</p>
+                </div>
                 <div class="story story5">
-                    <img src="assets/member5.jpg">
-                    <p>Aiza</p>
+                    <img src="assets/Angie.png">
+                    <p>Angie</p>
                 </div>
             </div>
             <div class="write-post-container">
                 <div class="user-profile">
-                    <img src="<%= user.profilePic || 'assets/usericon.png' %>" alt="<%= user.username %>">
+                    <img src="<%= (user && user.profilePic) || '/assets/usericon.png' %>" alt="<%= (user && user.username) || 'User' %>">
                     <div>
-                        <p><%= user ? user.username : 'Guest User' %></p>
-                        <small>Email: <%= user ? user.email : 'Not available' %></small>
+                        <p><%= (user && user.username) || 'Guest User' %></p>
+                        <small>Email: <%= (user && user.email) || 'Not available' %></small>
                     </div>
                 </div>
                 <div class="post-input-container">
