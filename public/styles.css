@@ -635,7 +635,7 @@ font-size: 60px;
 
 /* Post Creation Area Styles */
 .write-post-container {
-    background: #fff;
+    background: #9bd1dc;
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -691,7 +691,7 @@ font-size: 60px;
 
 .create-post-button {
     padding: 10px 25px;
-    background: #1877f2;
+    background: #073f89;
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -711,7 +711,7 @@ font-size: 60px;
 }
 
 .post {
-    background: #fff;
+    background:#9bd1dc;
     padding: 20px;
     border-radius: 6px;
     margin-bottom: 20px;
@@ -823,7 +823,7 @@ font-size: 60px;
 
 .comment-form button {
     padding: 8px 20px;
-    background: lightblue;
+    background: #073f89;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -831,7 +831,7 @@ font-size: 60px;
 }
 
 .comment-form button:hover {
-    background: rgb(98, 138, 151);
+    background: #166fe5;
 }
 
 /* Right Sidebar Advertisement Styles */
